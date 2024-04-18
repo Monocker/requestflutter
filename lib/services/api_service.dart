@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:productos_app/models/producto.dart';
 
 class ApiService {
-  final String _baseUrl = 'http://localhost:3000';
+  final String _baseUrl = 'https://localhost:7146/api/producto';
 
   Future<List<Producto>> getProduct() async {
-    final response = await http.get(Uri.parse('$_baseUrl/getProduct'));
+    final response = await http.get(Uri.parse('$_baseUrl/GetProducto'));
 
     if (response.statusCode == 200) {
       List<dynamic> body = jsonDecode(response.body);
